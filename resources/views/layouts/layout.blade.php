@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ env('APP_NAME') }}</title>
-        <link rel="shortcut icon" href="img/fav.png">
+        <link rel="shortcut icon" href="{{ asset('img/fav.png') }}">
         <script src="https://kit.fontawesome.com/9fa0f078e1.js"></script>
         <link rel="stylesheet" href="{{ asset('css/flaticon.css')}}">
         <link rel="stylesheet" href="{{ asset('css/themify-icons.css')}}">

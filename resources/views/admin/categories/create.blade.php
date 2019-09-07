@@ -35,7 +35,7 @@
                   </ul>
               </div>
               @endif
-              <form method="POST">
+              <form method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                   <label for="name">Nombre de Categoría</label>
@@ -44,7 +44,8 @@
                     id="name" 
                     placeholder="Nombre" 
                     name="name" 
-                    value="{{ old('name') }}">
+                    value="{{ old('name') }}"
+                    required>
                 </div>
                 <div class="form-group">
                   <label for="description">Descripción</label>
@@ -53,6 +54,20 @@
                     placeholder="...escribe algo" 
                     name="description">
                   {{ old('description') }}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="thumbnail">Imagen</label>
+                  <input class="form-control" 
+                    id="thumbnail"
+                    type="file"
+                    name="thumbnail"
+                    required/>
+                </div>
+                <div class="alert alert-warning alert-dismissible mt-3">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <h5><i class="icon fa fa-info"></i>Subida de imagen</h5>
+                  <p><strong>Dimensiones de imagen:</strong> 360 x 220</p>
+                  <p><strong>Peso máximo:</strong> 1mb</p>
                 </div>
                 <button type="submit" class="btn btn-success btn-block mr-2">Guardar</button>
               </form>

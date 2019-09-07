@@ -48,7 +48,8 @@
                 class="form-control" 
                 placeholder="Nombre" 
                 name="title"
-                value="{{ old('name') }}">
+                value="{{ old('title') }}"
+                required>
             </div>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
@@ -58,7 +59,8 @@
                 class="form-control" 
                 placeholder="Descripción" 
                 name="description"
-                value="{{ old('description') }}">
+                value="{{ old('description') }}"
+                required>
             </div>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
@@ -68,7 +70,8 @@
                 class="form-control" 
                 placeholder="Cliente" 
                 name="client"
-                value="{{ old('client') }}">
+                value="{{ old('client') }}"
+                required>
             </div>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
@@ -78,7 +81,8 @@
                 class="form-control" 
                 placeholder="https://" 
                 name="website"
-                value="{{ old('website') }}">
+                value="{{ old('website') }}"
+                required>
             </div>
           </div>
         </div>
@@ -96,10 +100,11 @@
                 id="pickerDate"
                 placeholder="Fecha" 
                 name="created"
-                value="{{ old('date') }}">
+                value="{{ old('created') }}"
+                required>
             </div>
             <div class="form-group mb-2">
-            <select class="select2" data-tags="true" name="category_id" style="width:100%;">
+            <select class="select2" data-tags="true" name="category_id" style="width:100%;" required>
               @foreach($categories as $category)
                 <option value="" selected="selected">Selecciona una categoría</option>
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -113,7 +118,8 @@
               <input type="file" 
                 class="form-control" 
                 name="thumbnail"
-                value="{{ old('thumbnail') }}">
+                value="{{ old('thumbnail') }}"
+                required>
             </div>
             <small class="text-muted">Las dimensiones son de 460x530 pixeles</small>
           </div>
@@ -127,10 +133,9 @@
           </div>
           <div class="card-body">
               <div class="form-group mb-2">
-                <textarea class="form-control" id="editor1" rows="2" name="content"></textarea>
+                <textarea class="form-control" id="editor1" rows="2" name="content" required>{{ old('content') }}</textarea>
                 @include('ckfinder::setup')
               </div>
-              @include('ckfinder::setup')
           </div>
           <button class="btn btn-success btn-block">Guardar</button>
         </div>

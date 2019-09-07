@@ -5,7 +5,7 @@
     <div class="row">
 
       <div class="col-lg-8 posts-list">
-        <div class="single-post row">
+        <div class="single-post row widget-wrap">
           <div class="col-lg-12">
             <div class="feature-img">
               <img class="img-fluid" src="{{ url($post->thumbnail) }}" alt="">
@@ -28,25 +28,26 @@
                 <li><a href="#"><i class="ti-facebook"></i></a></li>
                 <li><a href="#"><i class="ti-twitter"></i></a></li>
                 <li><a href="#"><i class="ti-github"></i></a></li>
-                <li><a href="#"><i class="ti-dribbble"></i></a></li>
               </ul>
             </div>
           </div>
           <div class="col-lg-9 col-md-9">
             <a class="posts-title" href="{{ route('blog.show', $post->url) }}"><h3>{{ $post->title }}</h3></a>
-            <p class="excert">{{ $post->content }}</p>
+            <p class="excert">{!! $post->content !!}</p>
           </div>
         </div>
-        <div class="comments-area">COMENTARIOS
-            <div id="disqus_thread"></div>
-            <script>
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://ym23-official.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-            </script>
+        <div class="row">
+          <div class="col-12 comments-area">COMENTARIOS
+              <div id="disqus_thread"></div>
+              <script>
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://ym23-official.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+              </script>
+          </div>
         </div>
       </div>
         

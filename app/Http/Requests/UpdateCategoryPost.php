@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreNewPostCategory extends FormRequest
+class UpdateCategoryPost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class StoreNewPostCategory extends FormRequest
         return [
             'name' => 'required|max:30',
             'description' => 'required|max:80',
-            'thumbnail' => 'required|image|mimes:jpeg,jpg,png,PNG,svg,gift|dimensions:width=360,height=220|max:1048'
+            'thumbnail' => 'image|mimes:jpeg,jpg,png,PNG,svg,gift|dimensions:width=360,height=220|max:1048'
         ];
     }
 
@@ -37,7 +37,6 @@ class StoreNewPostCategory extends FormRequest
             'name.max' => 'El nombre excede los 30 carácteres permitidos',
             'description.required' => 'Es necesario escribir una descripción para la categoría',
             'description.max' => 'La descripción excede los 80 carácteres permitidos',
-            'thumbnail.required' => 'Es necesario subir una imagen para la categoría',
             'thumbnail.image' => 'El archivo seleccionado no es una imagen',
             'thumbnail.dimensions' => 'Las dimensiones de la imagen no son las correctas',
             'thumbnail.mimes' => 'Este tipo de formato no está permitido',

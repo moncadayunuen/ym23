@@ -21,18 +21,12 @@
       </li>
     </ul>
 
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Buscar ..." aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-    </form>
-
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i class="fa fa-th-large"></i></a>
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button class="btn"><i class="fa fa-sign-out-alt mr-2"></i>Salir</button>
+        </form>
       </li>
     </ul>
 
@@ -168,6 +162,13 @@
                 </a>
               </li>
               @endcan
+              @can('Ver tags')
+              <li class="nav-item {{ request()->is('admin/tags') ? 'active' : '' }}">
+                <a href="{{ route('admin.posts.tags.index') }}" class="nav-link {{ request()->is('admin/publicaciones/tags') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i><p>Ver tags</p>
+                </a>
+              </li>
+              @endcan
               @can('Ver publicaciones')
               <li class="nav-item {{ request()->is('admin/publicaciones') ? 'active' : '' }}">
                 <a href="{{ route('admin.posts.index') }}" class="nav-link {{ request()->is('admin/publicaciones') ? 'active' : '' }}">
@@ -213,14 +214,6 @@
     @endif
     @yield('content')
   </div>
-
-  <aside class="control-sidebar control-sidebar-dark">
-
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
 
   <footer class="main-footer">
 

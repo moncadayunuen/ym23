@@ -59,14 +59,20 @@
               <a><img src="./img/languages/js-brands.svg" width="100px" title="" alt=""></a>
             </div>
             <div class="col-lg-2 col-md-4 col-6 py-2 d-flex justify-content-center">
+              <a><img src="./img/languages/js-react-icon.jpg" width="100px" title="" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6 py-2 d-flex justify-content-center">
               <a><img src="./img/languages/mysql.svg" width="100px" title="" alt=""></a>
             </div>
             <div class="col-lg-2 col-md-4 col-6 py-2 d-flex justify-content-center">
               <a><img src="./img/languages/node-brands.svg" width="100px" title="" alt=""></a>
             </div>
             <div class="col-lg-2 col-md-4 col-6 py-2 d-flex justify-content-center">
-                <a><img src="./img/languages/php-brands.svg" width="100px" title="" alt=""></a>
-              </div>
+              <a><img src="./img/languages/php-brands.svg" width="100px" title="" alt=""></a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6 py-2 d-flex justify-content-center">
+              <a><img src="./img/languages/laravel.png" width="100px" title="" alt=""></a>
+            </div>
           </div>
       </div>
     </div>

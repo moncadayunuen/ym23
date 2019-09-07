@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Http\Requests\UpdateCategoryPost;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreNewPostCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -30,9 +32,15 @@ class CategoriesController extends Controller
 
         $validated = $request->validated();
 
+        if ($request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $filePath = $file->store('public/categories');
+        }
+
         Category::create([
             'name' => $request->input('name'),
-            'description' => $request->input('description')
+            'description' => $request->input('description'),
+            'thumbnail' => Storage::url($filePath)
         ]);
 
         return redirect()->route('admin.categories.index')->with('success','¡Una nueva categoría ha sido creada exitosamente!');
@@ -44,17 +52,29 @@ class CategoriesController extends Controller
         return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(StoreNewPostCategory $request, Category $category)
+    public function update(UpdateCategoryPost $request, Category $category)
     {
         $this->authorize('update', $category);
 
         $validated = $request->validated();
 
-        $category->name = $request->input('name');
-        $category->description = $request->input('description');
-        $category->save();
+        if ($request->hasFile('thumbnail')) {
+            $imgPath = str_replace('storage', 'public', $category->thumbnail);
+            Storage::delete($imgPath);
+            $file = $request->file('thumbnail');
+            $filePath = $file->store('public/categories');
 
-        return back()->with('success','¡Se ha actualizado exitosamente la categoria!');
+            $category->name = $request->input('name');
+            $category->description = $request->input('description');
+            $category->thumbnail = Storage::url($filePath);
+            $category->save();
+        } else {
+            $category->name = $request->input('name');
+            $category->description = $request->input('description');
+            $category->save();
+        }
+
+        return redirect()->route('admin.categories.edit', $category)->with('success','¡Se ha actualizado exitosamente la categoria!');
     }
     public function destroy($id)
     {

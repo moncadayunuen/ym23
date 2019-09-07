@@ -4,12 +4,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Proyectos</h1>
+        <h1 class="m-0 text-dark">Tags</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Inicio</a></li>
-          <li class="breadcrumb-item active">Proyectos</li>
+          <li class="breadcrumb-item active">Tags</li>
         </ol>
       </div>
     </div>
@@ -22,30 +22,22 @@
 
       <div class="col-lg-12">
         <div class="card">
-          <div class="card-header d-flex justify-content-end">
-            <a href="{{ route('admin.projects.create') }}" class="btn btn-primary"><i class="fab fa-wpforms mr-2"></i>Crear Proyecto</a>
-          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table id="dataTable" class="table table-hover text-center">
                 <thead>
                   <tr>
-                    <th>Proyecto</th>
-                    <th>Cliente</th>
-                    <th>Categoría</th>
+                    <th>Nombre</th>
                     <th>Opciones <i class="ti-settings"></i></th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($projects as $project)
+                  @foreach ($tags as $tag)
                   <tr>
-                    <td>{{ $project->title }}</td>
-                    <td>{{ $project->client }}</td>
-                    <td class="text-danger">{{ $project->category_project->name }}</td>
+                    <td>{{ $tag->name }}</td>
                     <td class="d-flex justify-content-center align-items-center">
-                      {{-- <a target="_blank" href="{{ route('admin.projects.show', $project) }}" class="btn btn-success badge badge-success mx-1"><i class="fa fa-eye mr-1"></i> Ver</a> --}}
-                      <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary badge badge-primary mx-1"><i class="fa fa-pencil-alt mr-1"></i> Editar</a>
-                      <form method="POST" action="{{ route('admin.projects.destroy', $project) }}">
+                      <a href="{{ route('admin.posts.tags.edit', $tag) }}" class="btn btn-primary badge badge-primary mx-1"><i class="fa fa-pencil-alt mr-1"></i> Editar</a>
+                      <form method="POST" action="{{ route('admin.posts.tags.destroy', $tag) }}">
                         @csrf @method('DELETE')
                         <button class="btn btn-danger badge badge-danger mx-1"><i class="fa fa-trash-alt mr-1"></i> Eliminar</button>
                       </form>

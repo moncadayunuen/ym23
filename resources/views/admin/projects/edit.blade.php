@@ -48,7 +48,7 @@
                 class="form-control" 
                 placeholder="Nombre" 
                 name="title"
-                value="{{ old('name', $project->title) }}">
+                value="{{ old('title', $project->title) }}">
             </div>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
@@ -96,7 +96,7 @@
                 id="pickerDate"
                 placeholder="Fecha" 
                 name="created"
-                value="{{ old('date', $project->created) }}">
+                value="{{ old('created', $project->created) }}">
             </div>
             <div class="form-group mb-2">
             <select class="select2" data-tags="true" name="category_id" style="width:100%;">

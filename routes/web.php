@@ -18,6 +18,8 @@ Route::get('/blog/tag/{tag}', 'IndexController@tags')->name('blog.tags');
 
 Route::get('/download/{career}', 'DownloadFileController@download')->name('download');
 
+
+
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function() {
   Route::get('/', 'AdminController@index')->name('admin.index');
 
@@ -44,6 +46,13 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function()
     ->middleware('permission:Ver curriculum');
   Route::get('/curriculum/{career}/editar', 'CareerController@edit')->name('admin.cv.edit');
   Route::put('/curriculum/{career}/editar', 'CareerController@update')->name('admin.cv.update');
+
+  Route::get('/publicaciones/{tag}/tags', 'TagsController@edit')->name('admin.posts.tags.edit');
+  Route::put('/publicaciones/{tag}/tags', 'TagsController@update')->name('admin.posts.tags.update');
+  Route::delete('/publicaciones/tags/{tag}', 'TagsController@destroy')->name('admin.posts.tags.destroy');
+  Route::get('/publicaciones/tags', 'TagsController@index')
+    ->name('admin.posts.tags.index')
+    ->middleware('permission:Ver tags');
 
   Route::get('/publicaciones/categorias', 'CategoriesController@index')
     ->name('admin.categories.index')
