@@ -17,7 +17,9 @@ class IndexController extends Controller
     {
         return view('index', [
             'careers' => Career::all(),
-            'categories' => CategoryProject::all()
+            'categories' => CategoryProject::all(),
+            'post' => Post::orderBy('published_at','DESC')->take(1)->get(),
+            'posts' => Post::orderBy('published_at','DESC')->take(3)->skip(1)->get()
         ]);
     }
 
@@ -76,7 +78,7 @@ class IndexController extends Controller
     }
 
     public function categoryProjects(CategoryProject $category) {
-        $projects =  $category->projects()->get();
+        $projects =  $category->projects()->orderBy('created', 'DESC')->get();
 
         return view('projects.categories', [
             'projects' => $projects,

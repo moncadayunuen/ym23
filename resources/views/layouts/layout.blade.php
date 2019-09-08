@@ -21,10 +21,10 @@
             </div>
         </div>
 	    <header id="header">
-            <div class="container main-menu">
-                <div class="row align-items-center d-flex">
+            <div class="container">
+                <div class="main-menu">
                     <div id="logo">
-                        <a href="/"><img src="{{ asset('img/logo.svg') }}" width="150px" alt="" title="" /></a>
+                        <a href="{{ route('index') }}"><img src="{{ url('img/logo.svg') }}" width="150px" alt="logo" /></a>
                     </div>
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
@@ -60,9 +60,9 @@
                             <h6>Follow Me</h6>
                             <p>Let me be social</p>
                             <div class="footer-social d-flex align-items-center">
-                                <a href="https://www.facebook.com/yunuenmoncada"><i class="ti-facebook"></i></a>
-                                <a href="https://www.github.com/moncadayunuen/"><i class="ti-github"></i></a>
-                                <a href="https://www.linkedin.com/in/yunuen-moncada/"><i class="ti-linkedin"></i></a>
+                                <a href="https://www.youtube.com/channel/UCAzvFEr5UVf4FDcTgL2Rafg?view_as=subscriber" target="_blank"><i class="ti-youtube"></i></a>
+                                <a href="https://www.github.com/moncadayunuen/" target="_blank"><i class="ti-github"></i></a>
+                                <a href="https://www.linkedin.com/in/yunuen-moncada/" target="_blank"><i class="ti-linkedin"></i></a>
                             </div>
                         </div>
                     </div>

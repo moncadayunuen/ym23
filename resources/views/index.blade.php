@@ -32,117 +32,111 @@
       </div>
     </div>
   </section>
-    <!-- End banner Area -->
 
-    <!-- Start About Area -->
-    @foreach ($careers as $career)
-    <section class="about-area section-gap">
-      <div class="container">
-        <div class="row align-items-center justify-content-start">
-          <div class="col-lg-5 about-left">
-            <img class="img-fluid" src="{{ url($career->photo) }}" alt="">
+  @foreach ($careers as $career)
+  <section class="about-area section-gap">
+    <div class="container">
+      <div class="row align-items-center justify-content-start">
+        <div class="col-lg-5 about-left">
+          <img class="img-fluid" src="{{ url($career->photo) }}" alt="">
+        </div>
+        <div class="offset-lg-1 col-lg-5 col-md-12 about-right">
+          <div class="section-title">
+            <h2 class="mb-4">{{ $career->title }}</h2>
           </div>
-          <div class="offset-lg-1 col-lg-5 col-md-12 about-right">
-            <div class="section-title">
-              <h2 class="mb-4">{{ $career->title }}</h2>
-            </div>
-            <div class="mb-35 wow fadeIn" data-wow-duration=".8s" data-wow-delay=".3s">
-              <p>{!! $career->content !!}</p>
-            </div>
-            <a href="{{ route('aboutMe.index') }}" class="primary-btn" data-text="Read More">
-              <span>L</span>
-              <span>e</span>
-              <span>e</span>
-              <span>r</span>
-              <span></span>
-              <span>M</span>
-              <span>á</span>
-              <span>s</span>
-            </a>
+          <div class="mb-35 wow fadeIn" data-wow-duration=".8s" data-wow-delay=".3s">
+            <p>{!! $career->content !!}</p>
+          </div>
+          <a href="{{ route('aboutMe.index') }}" class="primary-btn" data-text="Read More">
+            <span>L</span>
+            <span>e</span>
+            <span>e</span>
+            <span>r</span>
+            <span></span>
+            <span>M</span>
+            <span>á</span>
+            <span>s</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  @endforeach
+
+  <section class="service-area section-gap-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h3>My Services</h3>
+            <h2><span>What I Offer?</span></h2>
           </div>
         </div>
       </div>
-    </section>
-    @endforeach
-    <!-- End About Area -->
-
-    <!-- Start Service Area -->
-    <section class="service-area section-gap-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title text-center">
-              <h3>My Services</h3>
-              <h2><span>What I Offer?</span></h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.0s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-desktop"></i>
+              <h4 class="ml-3">Interfaces Web Design</h4>
             </div>
+            <p>Wireframe, Layout & Programming websites.</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.0s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-desktop"></i>
-                <h4 class="ml-3">Interfaces Web Design</h4>
-              </div>
-              <p>Wireframe, Layout & Programming websites.</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-paint-brush"></i>
-                <h4 class="ml-3">Brand design</h4>
-              </div>
-              <p>Conceptualization and brands design.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-paint-brush"></i>
+              <h4 class="ml-3">Brand design</h4>
             </div>
+            <p>Conceptualization and brands design.</p>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-bullhorn"></i>
-                <h4 class="ml-3">Content Social Media</h4>
-              </div>
-              <p>Design or animation of social media content.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-bullhorn"></i>
+              <h4 class="ml-3">Content Social Media</h4>
             </div>
+            <p>Design or animation of social media content.</p>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="far fa-lightbulb"></i>
-                <h4 class="ml-3">Creativity & Innovation</h4>
-              </div>
-              <p>Always learning the most newest.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="far fa-lightbulb"></i>
+              <h4 class="ml-3">Creativity & Innovation</h4>
             </div>
+            <p>Always learning the most newest.</p>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="flaticon-button"></i>
-                <h4 class="ml-3">Video Edition</h4>
-              </div>
-              <p>Edition, banners design, etc.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="flaticon-button"></i>
+              <h4 class="ml-3">Video Edition</h4>
             </div>
+            <p>Edition, banners design, etc.</p>
           </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-              <div class="d-flex align-items-center mb-3">
-                <i class="fas fa-bezier-curve"></i>
-                <h4 class="ml-3">Motion Graphics</h4>
-              </div>
-              <p>Intros, Outros, Infographics, gifts, etc.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-bezier-curve"></i>
+              <h4 class="ml-3">Motion Graphics</h4>
             </div>
+            <p>Intros, Outros, Infographics, gifts, etc.</p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- End Service Area -->
+    </div>
+  </section>
 
-  <!-- Start Pricing Area -->
   <section class="pricing-area section-gap-top">
     <div class="container">
 
@@ -237,5 +231,93 @@
       </div>
     </div>
   </section>
-  <!-- End Pricing Area -->
+
+  @if(count($post) > 0)
+  <section class="blog-area section-gap-top">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h3>My Blog</h3>
+            <h2><span>Latest</span> Good Stories</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        
+        @if(count($posts) > 0)
+        <div class="col-lg-6">
+          @foreach ($post as $mainpost)
+          <div class="single-recent-blog mb-lg-3 mb-5">
+            <div class="thumb">
+              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
+            </div>
+            <a href="#">
+              <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
+            </a>
+            <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
+              <div class="meta">
+                <span class="ti-user mr-1"></span> Admin
+                <span class="ti-calendar mr-1"></span> {{ $mainpost->published_at->format('d/m/Y') }}
+              </div>
+            </div>
+            <p>{{ $mainpost->description }}</p>
+          </div>
+          @endforeach
+        </div>
+        @else
+        <div class="offset-md-3 col-md-9 offset-lg-3 col-lg-6">
+          @foreach ($post as $mainpost)
+          <div class="single-recent-blog mb-lg-3 mb-5">
+            <div class="thumb">
+              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
+            </div>
+            <a href="#">
+              <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
+            </a>
+            <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
+              <div class="meta">
+                <span class="ti-user mr-1"></span> Admin
+                <span class="ti-calendar mr-1"></span> {{ $mainpost->published_at->format('d/m/Y') }}
+              </div>
+            </div>
+            <p>{{ $mainpost->description }}</p>
+          </div>
+          @endforeach
+        </div>
+        @endif
+        <div class="col-lg-6">
+          @foreach($posts as $post)
+          <div class="single-recent-blog mb-lg-3 mb-5">
+            <div class="row">
+              <div class="col-lg-6 col-md-5">
+                <div class="thumb">
+                  <img class="f-img img-fluid mx-auto" src="{{ url($post->thumbnail) }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mt-md-0 mt-3">
+                <a href="#">
+                  <h4 class="mb-lg-3 mb-2">{{ $post->title }}</h4>
+                </a>
+                <div class="bottom d-flex justify-content-between align-items-center flex-wrap mb-3">
+                  <div class="meta">
+                    <span class="ti-user mr-1"></span> Admin
+                    <span class="ti-calendar mr-1"></span> {{ $post->published_at->format('d/m/Y') }}
+                  </div>
+                </div>
+                <p>{{ $post->description }}</p>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  @else 
+  <div></div>  
+  @endif
 @endsection

@@ -28,12 +28,12 @@
       </div>
       <div class="col-lg-8">
         <form
-          class="form-area "
+          class="form-area"
           id="myForm"
           action="mail.php"
           method="post"
           class="contact-form text-right"
-        >
+          autocomplete="off">
           <div class="row">
             <div class="col-lg-6 form-group form-group-top">
               <input

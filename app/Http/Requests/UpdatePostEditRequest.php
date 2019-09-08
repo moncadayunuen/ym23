@@ -19,8 +19,8 @@ class UpdatePostEditRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:50',
-            'description' => 'required|max:80',
+            'title' => 'required|max:70',
+            'description' => 'required|max:120',
             'category_id' => 'required',
             'published_at' => 'nullable',
             'content' => 'required',
@@ -32,9 +32,9 @@ class UpdatePostEditRequest extends FormRequest
     {
         return [
             'title.required' => 'Es requerido un titulo para la publicación',
-            'title.max' => 'El titulo excede los 50 carácteres',
+            'title.max' => 'El titulo excede los 70 carácteres',
             'description.required' => 'Es necesario escribir una descripción',
-            'description.max' => 'La descripción excede los 80 carácteres',
+            'description.max' => 'La descripción excede los 120 carácteres',
             'category_id.required' => 'Es necesario elegir una categoría',
             'content.required' => 'Es necesario que lleve algo de contenido',
             'thumbnail.image' => 'El archivo debe ser una imagen',

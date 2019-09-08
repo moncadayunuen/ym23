@@ -97,13 +97,9 @@
                   </select>
                 </div>
 
-              <div class="input-group">
-                  <div class="custom-file">
+                <div class="form-group">
+                    <label for="thumbnail">Selecciona una imagen</label>
                     <input type="file" class="form-control" id="thumbnail" name="thumbnail">
-                  </div>
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="">Subir imagen</span>
-                  </div>
                 </div>
                 <div class="alert alert-warning alert-dismissible mt-3">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
