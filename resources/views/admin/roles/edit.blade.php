@@ -20,7 +20,7 @@
   <div class="container-fluid">
     <div class="row">
 
-        <div class="offset-3 col-6">
+        <div class="offset-md-3 col-md-6 col-12">
           <div class="card card-dark card-outline">
             <div class="py-2 px-3"><h4>Editar Role</h4></div>
             @if ($errors->any())

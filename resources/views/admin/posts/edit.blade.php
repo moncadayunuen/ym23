@@ -67,7 +67,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="pickerDate" name="published_at" value="{{ old('published_at', $post->published_at) }}">
+                    <input type="text" class="form-control" id="pickerDate" name="published_at" value="{{ old('published_at', $post->published_at)->format('m/d/Y') }}">
                 </div>
               </div>
                 

@@ -27,7 +27,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table id="dataTable" class="table table-hover">
+              <table id="dataTable" class="table table-hover text-center">
                 <thead>
                   <tr>
                     <th>Titulo</th>
@@ -40,7 +40,7 @@
                   @foreach ($posts as $post)
                   <tr>
                     <td>{{ $post->title }}</td>
-                    <td>{{ $post->published_at->format('d/m/Y') }}</td>
+                    <td>{{ $post->published_at->format('m/d/Y') }}</td>
                     <td class="text-danger">{{ $post->category->name }}</td>
                     <td class="d-flex justify-content-center align-items-center">
                       <a target="_blank" href="{{ route('admin.posts.show', $post) }}" class="btn btn-success badge badge-success mx-1"><i class="fa fa-eye mr-1"></i> Ver</a>

@@ -45,6 +45,6 @@
 	</div>
 </section>
 @else 
-	<center><h1>There are not projects published</h1></center>
+	<center><h3 class="py-5">There are not projects published</h3></center>
 @endif
 @endsection

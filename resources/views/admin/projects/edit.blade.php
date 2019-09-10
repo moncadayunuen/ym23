@@ -96,7 +96,7 @@
                 id="pickerDate"
                 placeholder="Fecha" 
                 name="created"
-                value="{{ old('created', $project->created) }}">
+                value="{{ old('created', $project->created)->format('m/d/Y') }}">
             </div>
             <div class="form-group mb-2">
             <select class="select2" data-tags="true" name="category_id" style="width:100%;">

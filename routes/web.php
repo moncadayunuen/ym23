@@ -1,9 +1,4 @@
 <?php
-// Route::get('/email', function() {
-//   return new App\Mail\LoginCredentials(App\User::first(), 'asd5494sddsdf');
-// });
-
-
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/about', 'IndexController@aboutMe')->name('aboutMe.index');
 Route::get('/contact', 'IndexController@contact')->name('contact');
@@ -17,8 +12,6 @@ Route::get('/blog/category/{category}', 'IndexController@categories')->name('blo
 Route::get('/blog/tag/{tag}', 'IndexController@tags')->name('blog.tags');
 
 Route::get('/download/{career}', 'DownloadFileController@download')->name('download');
-
-
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function() {
   Route::get('/', 'AdminController@index')->name('admin.index');
@@ -103,9 +96,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function()
 
   Route::middleware('role:Administrador')->put('/usuarios/{user}/roles', 'UsersRolesController@update')->name('admin.users.roles.update');
   Route::middleware('role:Administrador')->put('/usuarios/{user}/permissions', 'UsersPermissionsController@update')->name('admin.users.permissions.update');
-
-  // PROVISIONAL
-  Route::middleware('role:Administrador')->post('/usuarios/roles/crear', 'UsersPermissionsController@store')->name('admin.users.permissions.store');
 
 });
 

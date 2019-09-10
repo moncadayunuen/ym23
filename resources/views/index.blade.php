@@ -252,9 +252,9 @@
           @foreach ($post as $mainpost)
           <div class="single-recent-blog mb-lg-3 mb-5">
             <div class="thumb">
-              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
+              <a href="{{ route('blog.show',$mainpost->url) }}"><img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt=""></a>
             </div>
-            <a href="#">
+            <a href="{{ route('blog.show',$mainpost->url) }}">
               <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
             </a>
             <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
@@ -272,9 +272,9 @@
           @foreach ($post as $mainpost)
           <div class="single-recent-blog mb-lg-3 mb-5">
             <div class="thumb">
-              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
+              <a href="{{ route('blog.show',$mainpost->url) }}"><img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt=""></a>
             </div>
-            <a href="#">
+            <a href="{{ route('blog.show',$mainpost->url) }}">
               <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
             </a>
             <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
@@ -294,11 +294,11 @@
             <div class="row">
               <div class="col-lg-6 col-md-5">
                 <div class="thumb">
-                  <img class="f-img img-fluid mx-auto" src="{{ url($post->thumbnail) }}" alt="">
+                  <a href="{{ route('blog.show',$mainpost->url) }}"><img class="f-img img-fluid mx-auto" src="{{ url($post->thumbnail) }}" alt=""></a>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 mt-md-0 mt-3">
-                <a href="#">
+                <a href="{{ route('blog.show' , $mainpost->url) }}">
                   <h4 class="mb-lg-3 mb-2">{{ $post->title }}</h4>
                 </a>
                 <div class="bottom d-flex justify-content-between align-items-center flex-wrap mb-3">

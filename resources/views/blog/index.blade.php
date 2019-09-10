@@ -110,6 +110,6 @@
   </div>
 </section>
 @else
-<center><h1 class="py-5">There are not posts published</h1></center>
+<center><h3 class="py-5">There are not posts published</h3></center>
 @endif
 @endsection

@@ -2,7 +2,7 @@
 @section('content')
 <section class="post-content-area pt-2">
   <div class="container">
-
+    @if(count($posts) > 0)
     <div class="row">
          
       <div class="col-lg-8 posts-list">
@@ -71,8 +71,11 @@
 
         </div>
       </div>
-
+      
     </div>
+    @else
+      <center><h3 class="py-5">There are not posts</h3></center>
+    @endif
   </div>
 </section>
 @endsection

@@ -47,10 +47,12 @@
                     <td class="d-flex justify-content-center align-items-center">
                       <a href="{{ route('admin.users.show', $user) }}" class="btn btn-primary badge badge-success mx-1"><i class="fa fa-eye mr-1"></i> Ver</a>
                       <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary badge badge-primary mx-1"><i class="fa fa-pencil-alt mr-1"></i> Editar</a>
+                      @if($user->getRoleNames()->implode('') !== 'Administrador')
                       <form method="POST" action="{{ route('admin.users.destroy', $user) }}">
                         @csrf @method('DELETE')
                         <button class="btn btn-danger badge badge-danger mx-1"><i class="fa fa-trash-alt mr-1"></i> Eliminar</button>
                       </form>
+                      @endif
                     </td>
                   </tr>
                   @endforeach
