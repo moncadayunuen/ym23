@@ -68,7 +68,7 @@
 
         <div class="col-md-6">
           <div class="card card-dark card-outline">
-            <div class="py-2 px-3"><h4>Crear Role</h4></div>
+            <div class="py-2 px-3"><h4>Crear Permiso</h4></div>
             @if ($errors->any())
             <div class="alert alert-danger alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
