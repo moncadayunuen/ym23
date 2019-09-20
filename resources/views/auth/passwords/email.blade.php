@@ -19,13 +19,18 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                     <div class="card-body login-card-body">
                         <p class="login-box-msg">Escribe tu correo para recuperar tu contraseña</p>
                         <form method="POST" action="{{ route('password.email') }}" autocomplete="off">
                             @csrf
 
                             <div class="form-group has-feedback">
-                                <input type="email" class="form-control" placeholder="Correo electrónico" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Correo electrónico" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <span class="fa fa-envelope form-control-feedback"></span>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -35,10 +40,8 @@
                             </div>
 
                             <div class="form-group has-feedback">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Enviar correo') }}</button>
-                                <a class="btn btn-link" href="/login">
-                                    {{ __('Ingresa para iniciar sesión') }}
-                                </a>
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar correo</button>
+                                <a class="btn btn-link" href="{{ route('login') }}">Ingresa para iniciar sesión</a>
                             </div>
                         </form>
                     </div>

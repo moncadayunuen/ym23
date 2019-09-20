@@ -1,0 +1,31 @@
+.address-wrap {
+  display: flex;
+  font-size: .8em;
+}
+.single-contact-address {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0;
+}
+.single-contact-address .icon {
+  font-size: 1.5em;
+}
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  margin: 5px 0;
+  transition: .3s ease;
+}
+.form-control:hover, .form-control:focus, .form-textarea:hover, .form-textarea:focus {
+  background: rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgba(0,0,0,.2);
+  resize: vertical;
+}

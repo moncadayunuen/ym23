@@ -1,0 +1,16 @@
+.project {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding: 1em 0;
+}
+.project-card {
+  background: $gray;
+  padding: 1em;
+}
+.project-info{
+  list-style: none;
+}
+.project-info span {
+  color: $red;
+  padding: 0 8px 0 0;
+}

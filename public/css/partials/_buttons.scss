@@ -1,0 +1,105 @@
+.btn {
+  width: max-content;
+  display: block;
+  padding: 10px 30px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: rgb(188, 188, 188);
+  border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+}
+
+.btn-primary {
+  color: $red;
+  margin-right: 5px;
+  background: $white;
+}
+.btn-primary span {
+  position: relative;
+  transition: .5s ease;
+}
+.btn-primary span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: .5s ease;
+}
+.btn-primary:hover span {
+  padding-right: 15px;
+}
+.btn-primary:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-secondary {
+  color: $white;
+  margin-right: 5px;
+  background: $red;
+}
+.btn-secondary span {
+  position: relative;
+  transition: .5s ease;
+}
+.btn-secondary span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: .5s ease;
+}
+.btn-secondary:hover span {
+  padding-right: 15px;
+}
+.btn-secondary:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-download {
+  color: $white;
+  margin-right: 5px;
+  background: $red;
+}
+.btn-download:hover {
+  background: transparent;
+  border: 1px solid $red;
+  color: $red;
+}
+
+.btn-underline {
+  color: $white;
+  border: 1px solid $white;
+  background: transparent;
+}
+.btn-underline span {
+  position: relative;
+  transition: .5s ease;
+}
+.btn-underline span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: .5s ease;
+}
+.btn-underline:hover span {
+  padding-right: 15px;
+}
+.btn-underline:hover span::after {
+  opacity: 1;
+  right: 0;
+}

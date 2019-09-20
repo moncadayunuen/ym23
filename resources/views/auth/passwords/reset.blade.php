@@ -19,14 +19,14 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body login-card-body">
-                     <p class="login-box-msg">{{ __('Cambiar contraseña') }}</p>
-                    <form method="POST" action="{{ route('password.reset') }}" autocomplete="off">
+                     <p class="login-box-msg">Cambiar contraseña</p>
+                    <form method="POST" action="{{ route('password.update') }}" autocomplete="off">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group has-feedback">
-                            <input type="email" class="form-control" placeholder="Correo electrónico" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Correo electrónico" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                             <span class="fa fa-envelope form-control-feedback"></span>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -51,9 +51,7 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">
-                                {{ __('Cambiar contraseña') }}
-                            </button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Cambiar contraseña</button>
                         </div>
                     </form>
                 </div>

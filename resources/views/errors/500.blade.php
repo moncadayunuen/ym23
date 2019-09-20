@@ -18,7 +18,7 @@
         .page_404  img{ width:100%;}
 
         .four_zero_four_bg{
-          background-image: url(https://www.opin.ca/sites/default/files/2018-08/403_1.gif);
+          background-image: url(https://cdn.dribbble.com/users/19381/screenshots/3471308/dribbble-500-animated.gif);
           height: 400px;
           background-position: center;
           background-repeat: no-repeat;
@@ -39,12 +39,11 @@
           <div class="col-sm-12">
             <div class="text-center">
               <div class="four_zero_four_bg">
-                <h1 class="text-center ">Error 403</h1>
+                <h1 class="text-center ">Error 500</h1>
               </div>
               <div class="contant_box_404">
                 <h3 class="h2"> Sorry!</h3>
-                <p>The page you are looking for is forbidden for you!</p>
-                <a href="{{ route('index') }}" class="btn btn-warning">Go to Home</a>
+                <p>Something went wrong</p>
               </div>
             </div>
           </div>

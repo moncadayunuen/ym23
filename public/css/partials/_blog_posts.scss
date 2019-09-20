@@ -1,0 +1,68 @@
+.tags {list-style:none;}
+.tags li a {
+  text-decoration: none;
+  color: $red;
+  border: 1px solid $red;
+  padding: 2px 10px;
+}
+.user-details {
+  width: 100%;
+  text-align: end;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.user-details a {
+  font-size: .9em;
+  color: $black;
+  text-decoration: none;
+}
+
+.user-details a:hover {
+  color: $red;
+}
+
+.feature-img {
+  display: flex;
+}
+
+.posts-title {
+  text-decoration: none;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  color: $black;
+  transition: .3s ease;
+}
+
+.posts-title:hover {
+  padding-left: .5em;
+}
+
+.excert {
+  color: rgba(0,0,0,.8);
+  padding: 1em 0;
+}
+
+.social-links {
+  width: 100%;
+  list-style: none;
+  font-size: 1.8em;
+  text-align: end;
+}
+
+.social-links a i{
+  margin: 0 5px;
+  transition: .3s ease;
+}
+
+.social-links a i:hover {
+  transform: rotate(360deg);
+  color: $red;
+}
+
+@media screen and (max-width:768px) {
+  .social-links {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,66 @@
+.line-footer {
+  width: 45%;
+  height: 3px;
+  background: $red;
+}
+footer {
+  width: 100%;
+  height: 180px;
+  padding: 20px 5px;
+  color: $white;
+  background: $black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.brand-page p{
+  color: $white;
+}
+.box-social-media {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+}
+.title-social-media h4{
+  color: $white;
+}
+.social-media {
+  color: $white;
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
+}
+.social-media li a i {
+  color: $white;
+  font-size: 2em;
+  margin: 0 7px;
+  transition: .5s ease;
+  &:hover {
+    color: $red;
+    font-size: 2.2em;
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+.info-footer {
+  color: $white;
+  background: $black;
+  padding: 1em 0 ;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+@media screen and (max-width:768px) {
+  footer {
+    height: 215px;
+    flex-direction: column;
+  }
+  .brand-page {
+    justify-content: center;
+    text-align: center;
+  }
+}

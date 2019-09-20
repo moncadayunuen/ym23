@@ -8,13 +8,12 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class LoginCredentials extends Mailable
+class UpdatingCredentials extends Mailable
 {
     public $user;
     public $password;
 
     use Queueable, SerializesModels;
-
     public function __construct($user, $password)
     {
         $this->user = $user;
@@ -23,7 +22,7 @@ class LoginCredentials extends Mailable
 
     public function build()
     {
-        return $this->view('emails.loginCredentials')
-                    ->subject('Credenciales de Acceso '.config('app.name'));
+        return $this->view('emails.updatingCredentials')
+                    ->subject('Actualización de Credenciales '.config('app.name'));
     }
 }

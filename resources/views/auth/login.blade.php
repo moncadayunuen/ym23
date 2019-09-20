@@ -25,7 +25,7 @@
                             @csrf
 
                             <div class="form-group has-feedback">
-                                <input id="email" type="email" class="form-control" placeholder="Correo electrónico" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Correo electrónico" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <span class="fa fa-envelope form-control-feedback"></span>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -46,18 +46,14 @@
 
                             <div class="form-group has-feedback">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="checkbox icheck" for="remember">
-                                    {{ __('Remember Me') }}
-                                </label>
+                                <label class="checkbox icheck" for="remember">Recordar mi cuenta</label>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Ingresar') }}</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('¿Olvidaste tu contraseña?') }}
-                                    </a>
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
                                 @endif
                             </div>
                         </form>

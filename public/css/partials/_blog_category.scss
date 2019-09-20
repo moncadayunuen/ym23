@@ -1,0 +1,42 @@
+.single-category {
+  background: purple;
+}
+
+.thumb-category {
+  position: relative;
+  background: red;
+  display: flex;
+}
+
+.content-category {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: .8em 1em;
+  top: 0;
+  color: $white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85%;
+  width: 85%;
+  background: rgba(0,0,0,.9);
+  margin: auto;
+  transition: .3s ease;
+}
+
+.thumb-category:hover .content-category {
+  height: 100%;
+  width: 100%;
+}
+
+.content-category h4{
+  color: $white;
+}
+
+.content-category p{
+  color: $white;
+}

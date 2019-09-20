@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\UserWasUpdated;
+use App\Listeners\SendUpdatingCredentials;
 use App\Events\UserWasCreated;
 use App\Listeners\SendLoginCredentials;
 use Spatie\Permission\Models\Permission;
@@ -72,6 +74,8 @@ class UsersController extends Controller
         } else {
             $avatar = 'img/users/user.jpg';
             $password = str_random(8);
+            
+            $user = new User;
             $user->name = $request->input('name');
             $user->lastname = $request->input('lastname');
             $user->email = $request->input('email');
@@ -132,7 +136,7 @@ class UsersController extends Controller
             $user->save();
             if ($request->filled('password')){
                 $user->password = Hash::make($request->input('password'));
-                UserWasCreated::dispatch($user, $password);
+                UserWasUpdated::dispatch($user, $password);
                 $user->save();
             }
         } else {
@@ -142,7 +146,7 @@ class UsersController extends Controller
             $user->save();
             if ($request->filled('password')){
                 $user->password = Hash::make($request->input('password'));
-                UserWasCreated::dispatch($user, $request->input('password'));
+                UserWasUpdated::dispatch($user, $request->input('password'));
                 $user->save();
             }
         }

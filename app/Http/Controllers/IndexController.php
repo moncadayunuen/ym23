@@ -8,8 +8,10 @@ use App\Post;
 use App\Project;
 use App\Career;
 use App\CategoryProject;
+use App\Mail\ContactEmail;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -17,17 +19,15 @@ class IndexController extends Controller
     {
         return view('index', [
             'careers' => Career::all(),
-            'categories' => CategoryProject::all(),
-            'post' => Post::orderBy('published_at','DESC')->take(1)->get(),
-            'posts' => Post::orderBy('published_at','DESC')->take(3)->skip(1)->get()
+            'post' => Post::whereNotNull('published_at')->orderBy('published_at','DESC')->take(1)->get(),
+            'posts' => Post::whereNotNull('published_at')->orderBy('published_at','DESC')->take(3)->skip(1)->get()
         ]);
     }
 
     public function aboutMe()
     {
-        return view('aboutMe.index', [
-            'careers' => Career::all(),
-            'categories' => CategoryProject::all()
+        return view('about', [
+            'careers' => Career::all()
         ]);
     }
 
@@ -39,8 +39,7 @@ class IndexController extends Controller
         return view('blog.index', [
             'postsCategories' => $postsCategories ,
             'tags' => $tags, 
-            'posts' => $posts,
-            'categories' => CategoryProject::all()
+            'posts' => $posts
         ]);
     }
 
@@ -59,8 +58,7 @@ class IndexController extends Controller
         return view('blog.categories', [
             'posts' => $posts,
             'allposts' => $allposts,
-            'tags' => $tags,
-            'categories' => CategoryProject::all()
+            'tags' => $tags
         ]);
     }
 
@@ -72,8 +70,14 @@ class IndexController extends Controller
         return view('blog.tags', [
             'posts' => $posts,
             'allPosts' => $allPosts,
-            'tags' => $tags,
-            'categories' => CategoryProject::all()
+            'tags' => $tags        
+        ]);
+    }
+
+    public function projects() {
+        return view('projects.index', [
+            'projects' =>  Project::all(),
+            'categories' => CategoryProject::orderBy('created_at', 'DESC')->get()
         ]);
     }
 
@@ -89,13 +93,16 @@ class IndexController extends Controller
     public function showProject(Project $project) {
         return view('projects.show', [
             'project' => $project,
-            'categories' => CategoryProject::all()
         ]);
     }
 
     public function contact() {
-        return view('contact', [
-            'categories' => CategoryProject::all()
-        ]);
+        return view('contact');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        Mail::send(new ContactEmail($request));
+        return redirect()->route('contact')->with('success','Te contestaremos lo más pronto posible');
     }
 }

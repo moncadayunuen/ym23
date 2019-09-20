@@ -1,323 +1,181 @@
 @extends('layouts.layout')
 @section('content')
-  <!-- start banner Area -->
-  <section class="home-banner-area">
-    <div class="container-fluid">
-      <div class="row fullscreen d-flex align-items-center">
-        <div class="banner-content col-lg-4 col-md-8 justify-content-center ">
-          <h1 class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">I'm <span>a</span> <br />
-            Multi<span>m</span>edia</br><span>D</span>esigner</h1>
-          <div class="designation mb-25 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <p>I have many challenges ahead, I think about how to face them</p>
-          </div>
-          <a href="{{ route('aboutMe.index') }}" class="primary-btn" data-text="Show more">
-            <span>V</span>
-            <span>e</span>
-            <span>r</span>
-            <span></span>
-            <span>M</span>
-            <span>á</span>
-            <span>s</span>
-          </a>
-        </div>
-        <div class="banner-img offset-lg-1 col-lg-7 col-md-6">
-          <img class="img-fluid" src="img/banner-img.png" alt="">
-        </div>
-        <div class="social-icons">
-          <ul>
-            <li><a href="https://www.github.com/moncadayunuen/" target="_blank"><i class="ti-github"></i>moncadayunuen</a></li>
-            <li><a href="https://www.facebook.com/yunuenmoncada/" target="_blank"><i class="ti-linkedin"></i>yunuen-moncada</a></li>
-          </ul>
-        </div>
+
+<header>
+  <div class="box-about-me">
+    <h1>Soy Diseñadora Multimedia</h1>
+    <p>Tengo muchos desafíos por delante, pienso cómo enfrentarlos</p>
+    <div class="d-flex">
+      <a class="btn btn-primary" href="{{ route('projects.index') }}"><span>Proyectos </span></a>
+      <a class="btn btn-underline" href="{{ route('about') }}"><span>Sobre mí</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="about-me">
+  <div class="row">
+    <div class="col-lg-6 col-md-4 col-12">
+      <div class="thumb-about-me">
+        <img src="{{ asset('img/banner-img.png') }}" class="img-fluid">
       </div>
     </div>
-  </section>
-
-  @foreach ($careers as $career)
-  <section class="about-area section-gap">
-    <div class="container">
-      <div class="row align-items-center justify-content-start">
-        <div class="col-lg-5 about-left">
-          <img class="img-fluid" src="{{ url($career->photo) }}" alt="">
-        </div>
-        <div class="offset-lg-1 col-lg-5 col-md-12 about-right">
-          <div class="section-title">
-            <h2 class="mb-4">{{ $career->title }}</h2>
-          </div>
-          <div class="mb-35 wow fadeIn" data-wow-duration=".8s" data-wow-delay=".3s">
-            <p>{!! $career->content !!}</p>
-          </div>
-          <a href="{{ route('aboutMe.index') }}" class="primary-btn" data-text="Read More">
-            <span>L</span>
-            <span>e</span>
-            <span>e</span>
-            <span>r</span>
-            <span></span>
-            <span>M</span>
-            <span>á</span>
-            <span>s</span>
-          </a>
-        </div>
-      </div>
+    <div class="col-lg-6 col-md-8 col-12">
+      <h1 class="text-center">Sobre mí</h1>
+      <p>Tengo una licenciatura en multimedia de la Universidad de Medios Audiovisuales, con especialidad en multimedia. Parte de mi capacitación incluye fotografía, diseño gráfico digital, animación y diseño de interfaces web y móvil.
+      </p>
+      <a class="btn btn-secondary m-2" href="{{ route('about') }}"><span>Ver más</span></a>
     </div>
-  </section>
-  @endforeach
+  </div>
+</section>
 
-  <section class="service-area section-gap-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title text-center">
-            <h3>My Services</h3>
-            <h2><span>What I Offer?</span></h2>
+
+<section class="skills">
+  <h1 class="title-white">Habilidades</h1>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="fa fa-laptop"></i>
+            <h3>Interfaces Web Design</h3>
+          </div>
+          <div class="card-content">
+            <p>Prototipos, maquetado de sitios, CMS's, etc.</p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.0s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="fas fa-desktop"></i>
-              <h4 class="ml-3">Interfaces Web Design</h4>
-            </div>
-            <p>Wireframe, Layout & Programming websites.</p>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="fas fa-paint-brush"></i>
-              <h4 class="ml-3">Brand design</h4>
-            </div>
-            <p>Conceptualization and brands design.</p>
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="fa fa-paint-brush"></i>
+            <h3>Diseño de Marca</h3>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="fas fa-bullhorn"></i>
-              <h4 class="ml-3">Content Social Media</h4>
-            </div>
-            <p>Design or animation of social media content.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="far fa-lightbulb"></i>
-              <h4 class="ml-3">Creativity & Innovation</h4>
-            </div>
-            <p>Always learning the most newest.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="flaticon-button"></i>
-              <h4 class="ml-3">Video Edition</h4>
-            </div>
-            <p>Edition, banners design, etc.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="d-flex align-items-center mb-3">
-              <i class="fas fa-bezier-curve"></i>
-              <h4 class="ml-3">Motion Graphics</h4>
-            </div>
-            <p>Intros, Outros, Infographics, gifts, etc.</p>
+          <div class="card-content">
+            <p>Logotipos, Papelería, Packaging, etc.</p>
           </div>
         </div>
       </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Redes sociales</h3>
+          </div>
+          <div class="card-content">
+            <p>Contenido para Facebook, Instagram, Youtube, etc.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="far fa-lightbulb"></i>
+            <h4>Aprendizaje Continuo</h4>
+          </div>
+          <div class="card-content">
+            <p>Siempre aprendiendo cosas nuevas. Y fortaleciendo lo aprendido.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="fas fa-play"></i>
+            <h4>Edición de Video</h4>
+          </div>
+          <div class="card-content">
+            <p>Edición de video, subtítulos, correción de color, edición de audio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="single-skill">
+          <div class="single-skill-header">
+            <i class="fas fa-bezier-curve"></i>
+            <h4>Motion Graphics</h4>
+          </div>
+          <div class="card-content">
+            <p>Videos institucionales, banners, intros, outros, gifts, etc.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="pricing-area section-gap-top">
-    <div class="container">
+@if(count($post) > 0)
+<section class="blog">
+  <h1 class="title">Blog</h1>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title text-center">
-            <h3>Quoting</h3>
-            <h2><span>Salary</span> for independents projects</h2>
+  <div class="container">
+    <div class="row py-5">
+      @if (count($posts) > 0 )
+      @foreach ($post as $mainpost)
+      <div class="col-lg-6">
+        <div class="single-project">
+          <div class="thumb-project">
+            <a href="{{ route('blog.show', $mainpost->url) }}"><img src="{{ asset($mainpost->thumbnail) }}" class="img-fluid h-img"></a>
           </div>
+          <a href="{{ route('blog.show', $mainpost->url) }}" class="text-decoration"><h2>{{ $mainpost->title }}</h2></a>
+          <div class="meta">
+            <span class="d-flex"><img src="{{ asset($mainpost->owner->avatar) }}" width="35" class="pr-2"> {{ $mainpost->owner->name }}</span>
+            <span>{{ $mainpost->published_at->format('d/m/Y') }}</span>
+          </div>
+          <p>{{ $mainpost->description }}</p>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="pricing_item">
-            <h3 class="p_title">Graphic Design</h3>
-            <p class="p_criteria">Price by an hour</p>
-            <h1 class="p_price">$115.00</h1>
-            <div class="p_list">
-              <ul>
-                <li><span class="ti-check"></span> Approaches</li>
-                <li><span class="ti-check"></span> Corrections / Changes / Delivery</li>
-              </ul>
-                <a class="primary-btn mt-4" href="contact.html" data-text="I want a project">
-                <span>P</span>
-                <span>r</span>
-                <span>o</span>
-                <span>y</span>
-                <span>e</span>
-                <span>c</span>
-                <span>t</span>
-                <span>o</span>
-              </a>
-            </div>
+      @endforeach
+      @else
+      @foreach ($post as $mainpost)
+      <div class="offset-md-3 col-md-9 offset-lg-3 col-lg-6 col-12">
+        <div class="single-project">
+          <div class="thumb-project">
+            <img src="{{ asset($mainpost->thumbnail) }}" class="img-fluid h-img">
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="pricing_item">
-            <h3 class="p_title">Website</h3>
-            <p class="p_criteria">Price by an hour</p>
-            <h1 class="p_price">$140.00</h1>
-            <div class="p_list">
-              <ul>
-                <li><span class="ti-check"></span> Conceptualization / Wireframe</li>
-                <li><span class="ti-check"></span> Layout</li>
-                <li><span class="ti-check"></span> Programming Website</li>
-                <li><span class="ti-check"></span> Pre-Delivery</li>
-                <li><span class="ti-check"></span> Correactions / Changes / Delivery</li>
-                <li><span class="ti-check"></span> Hosting and Domain Purchase</li>
-              </ul>
-              <a class="primary-btn mt-4" href="contact.html" data-text="I want a project">
-                <span>P</span>
-                <span>r</span>
-                <span>o</span>
-                <span>y</span>
-                <span>e</span>
-                <span>c</span>
-                <span>t</span>
-                <span>o</span>
-              </a>
-            </div>
+          <a href="" class="text-decoration"><h2>{{ $mainpost->title }}</h2></a>
+          <div class="meta">
+            <span class="d-flex"><img src="./images//user.jpg" width="35" class="pr-2"> {{ $mainpost->owner->name }}</span>
+            <span>{{ $mainpost->published_at->format('d/m/Y') }}</span>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="pricing_item">
-            <h3 class="p_title">Motion Graphics</h3>
-            <p class="p_criteria">Price by an hour</p>
-            <h1 class="p_price">$135.00</h1>
-            <div class="p_list">
-              <ul>
-                <li><span class="ti-check"></span> Conceptualization Topic</li>
-                <li><span class="ti-check"></span> Graphic Design of Product</li>
-                <li><span class="ti-check"></span> Animation Stage</li>
-                <li><span class="ti-check"></span> Pre-Delivery</li>
-                <li><span class="ti-check"></span> Corrections / Changes / Delivery</li>
-              </ul>
-              <a class="primary-btn mt-4" href="contact.html" data-text="I want a project">
-                <span>P</span>
-                <span>r</span>
-                <span>o</span>
-                <span>y</span>
-                <span>e</span>
-                <span>c</span>
-                <span>t</span>
-                <span>o</span>
-              </a>
-            </div>
-          </div>
+          <p>{{ $mainpost->description }}</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  @if(count($post) > 0)
-  <section class="blog-area section-gap-top">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title text-center">
-            <h3>My Blog</h3>
-            <h2><span>Latest</span> Good Stories</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        
-        @if(count($posts) > 0)
-        <div class="col-lg-6">
-          @foreach ($post as $mainpost)
-          <div class="single-recent-blog mb-lg-3 mb-5">
-            <div class="thumb">
-              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
+      @endforeach
+      @endif
+      <div class="col-lg-6">
+        @foreach($posts as $post)
+        <div class="single-project">
+          <div class="row">
+            <div class="col-lg-6 col-md-5">
+              <div class="thumb-project">
+                <a href="{{ route('blog.show', $post->url) }}"><img src="{{ asset($post->thumbnail) }}" class="img-fluid h-img"></a>
+              </div>
             </div>
-            <a href="#">
-              <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
-            </a>
-            <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
+            <div class="col-lg-6 col-md-7">
+              <a href="{{ route('blog.show', $post->url) }}" class="text-decoration"><h4 class="px-2">{{ $post->title }}</h4></a>
               <div class="meta">
-                <span class="ti-user mr-1"></span> Admin
-                <span class="ti-calendar mr-1"></span> {{ $mainpost->published_at->format('d/m/Y') }}
+                <span class="d-flex"><img src="{{ $post->owner->avatar }}" width="35" class="pr-2"> {{ $post->owner->name }}</span>
+                <span>{{ $post->published_at->format('d/m/Y') }}</span>
               </div>
-            </div>
-            <p>{{ $mainpost->description }}</p>
-          </div>
-          @endforeach
-        </div>
-        @else
-        <div class="offset-md-3 col-md-9 offset-lg-3 col-lg-6">
-          @foreach ($post as $mainpost)
-          <div class="single-recent-blog mb-lg-3 mb-5">
-            <div class="thumb">
-              <img class="f-img img-fluid mx-auto" src="{{ url($mainpost->thumbnail) }}" alt="">
-            </div>
-            <a href="#">
-              <h4 class="mt-4 mb-3">{{ $mainpost->title }}</h4>
-            </a>
-            <div class="mb-3 bottom d-flex justify-content-between align-items-center flex-wrap">
-              <div class="meta">
-                <span class="ti-user mr-1"></span> Admin
-                <span class="ti-calendar mr-1"></span> {{ $mainpost->published_at->format('d/m/Y') }}
-              </div>
-            </div>
-            <p>{{ $mainpost->description }}</p>
-          </div>
-          @endforeach
-        </div>
-        @endif
-        <div class="col-lg-6">
-          @foreach($posts as $post)
-          <div class="single-recent-blog mb-lg-3 mb-5">
-            <div class="row">
-              <div class="col-lg-6 col-md-5">
-                <div class="thumb">
-                  <img class="f-img img-fluid mx-auto" src="{{ url($post->thumbnail) }}" alt="">
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 mt-md-0 mt-3">
-                <a href="#">
-                  <h4 class="mb-lg-3 mb-2">{{ $post->title }}</h4>
-                </a>
-                <div class="bottom d-flex justify-content-between align-items-center flex-wrap mb-3">
-                  <div class="meta">
-                    <span class="ti-user mr-1"></span> Admin
-                    <span class="ti-calendar mr-1"></span> {{ $post->published_at->format('d/m/Y') }}
-                  </div>
-                </div>
-                <p>{{ $post->description }}</p>
-              </div>
+              <p>{{ $post->description }}</p>
             </div>
           </div>
-          @endforeach
         </div>
-       
+        @endforeach
       </div>
     </div>
-  </section>
-  @else 
-  <div></div>  
-  @endif
+  </div>
+
+</section>
+@else
+<div></div>
+@endif
+
 @endsection

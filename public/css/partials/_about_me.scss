@@ -1,0 +1,17 @@
+.about-me{
+  padding: 20px 0;
+}
+
+.about-me .thumb-about-me {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+@media screen and (max-width:768px) {
+  .about-me .thumb-about-me {
+    width: 30%;
+  }
+}

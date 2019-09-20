@@ -9,6 +9,7 @@
     <body>
     <div style="padding: 15px 0; background: white;border-bottom: 2px solid #FFED12;"><center><h1 style="color: black; ">YM23</h1></center></div>
     <div style="padding: 20px;">
+      <center><h1>Tus Credenciales de Acceso fueron actualizadas</h1></center>
       <h2>{{ $user->name }} utiliza estas credenciales para acceder al sistema.</h2>
       <div style="display: block;padding: 20px 0;">
           <table style="border-collapse:collapse; margin: 0 auto;">

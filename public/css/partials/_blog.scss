@@ -1,0 +1,35 @@
+.blog {
+  width: 100%;
+  background: $white;
+  padding: 20px 0;
+}
+
+.single-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 5px 0;
+}
+.single-project .thumb-project {
+  overflow: hidden;
+  transition: .3s ease;
+}
+.thumb-project .h-img {
+  transform: scale(1.1);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; 
+}
+.thumb-project:hover .h-img {
+  cursor: pointer;
+  transform: scale(1.3) rotate(5deg);
+}
+.single-project .meta {
+  display: flex;
+  color: gray;
+}
+.single-project .meta:hover {
+  color: darkgray;
+}
+.single-project .meta span {margin: 0 5px;}

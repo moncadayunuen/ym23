@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ff00777344010b48715a4e00fbcefe7",
+    "content-hash": "44006f814d4307039c038d1d28e99a73",
     "packages": [
+        {
+            "name": "aewebsolutions/laravel-translator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aewebsolutions/laravel-translator.git",
+                "reference": "e7ac1ac374d79b1daeacc28d68eee3ea001be6c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aewebsolutions/laravel-translator/zipball/e7ac1ac374d79b1daeacc28d68eee3ea001be6c2",
+                "reference": "e7ac1ac374d79b1daeacc28d68eee3ea001be6c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Translator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Angel Espro",
+                    "email": "info@aesolucionesweb.com.ar",
+                    "homepage": "http://www.aesolucionesweb.com.ar/"
+                }
+            ],
+            "description": "Laravel's package for managing multiple locales and translation",
+            "homepage": "https://github.com/aewebsolutions/laravel-translator/",
+            "keywords": [
+                "laravel",
+                "locale",
+                "router",
+                "translation"
+            ],
+            "time": "2016-04-25T22:45:46+00:00"
+        },
         {
             "name": "aws/aws-sdk-php",
             "version": "3.110.7",

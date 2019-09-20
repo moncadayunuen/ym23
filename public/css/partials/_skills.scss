@@ -1,0 +1,28 @@
+.skills {
+  width: 100%;
+  background: url(../../img/header.jpg);
+  background-attachment: fixed;
+  padding: 40px 0;
+}
+
+.single-skill {
+  padding: 25px 15px;
+  background: $white;
+  box-shadow: 0 0 .5em .5em rgba(0, 0, 0, 0.34);
+  margin: 0 0 10px 0;
+  transition: .3s ease;
+}
+.single-skill-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-skill-header i {
+  font-size: 1.8em;
+  color: $red;
+  padding: 0 12px;
+}
+
+.single-skill:hover {
+  transform: scale(1.05);
+}
